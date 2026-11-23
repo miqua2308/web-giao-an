@@ -1,0 +1,8 @@
+node_modules/
+_site/
+*.pptx
+*.mp4
+*.mp3
+Thumbs.db
+.DS_Store
+.claude/

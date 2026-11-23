@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài 1 · Hệ điều hành</title>
+  <meta name="description" content="Bài học tương tác Tin học 11 – Bài 1: Hệ điều hành. Có mô hình 3D, câu hỏi và trò chơi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Bỏ qua, đến nội dung chính</a>
+
+  <!-- ================= THANH ĐIỀU HƯỚNG ================= -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#home" aria-label="Về đầu trang">
+        <span class="brand__mark" aria-hidden="true">HĐH</span>
+        <span class="brand__text">Bài 1 · Hệ điều hành</span>
+      </a>
+      <nav class="nav" aria-label="Mục lục">
+        <a href="#khoi-dong">Khởi động</a>
+        <a href="#phan-1">Phần 1</a>
+        <a href="#phan-2">Phần 2</a>
+        <a href="#phan-3">Phần 3</a>
+        <a href="#tong-ket">Tổng kết</a>
+      </nav>
+      <div class="progress" aria-label="Tiến độ học">
+        <div class="progress__bar"><span id="progressFill"></span></div>
+        <span class="progress__text" id="progressText">0/8</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= TRANG CHỦ ================= -->
+    <section id="home" class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">Tin học 11 · Chủ đề 1: Máy tính và xã hội tri thức</p>
+          <h1>Hệ điều hành<br><span>người quản lí thầm lặng của máy tính</span></h1>
+          <p class="lead">Mỗi lần em bật máy, mở ứng dụng hay cắm USB, luôn có một phần mềm đứng giữa làm mọi việc. Bài này giúp em hiểu phần mềm đó là gì, nó đã thay đổi ra sao và vì sao máy nào cũng cần nó.</p>
+          <div class="hero__goals">
+            <h2 class="h-small">Sau bài này em sẽ:</h2>
+            <ul class="checks">
+              <li>Nêu được 5 nhóm chức năng của hệ điều hành.</li>
+              <li>Kể được các mốc phát triển của Windows và nguồn gốc của LINUX.</li>
+              <li>Chỉ ra đặc trưng của hệ điều hành di động.</li>
+              <li>Giải thích quan hệ giữa phần cứng, hệ điều hành và phần mềm ứng dụng.</li>
+            </ul>
+          </div>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#khoi-dong">Bắt đầu học</a>
+            <a class="btn btn--ghost" href="#bai-kiem-tra">Làm bài kiểm tra</a>
+          </div>
+        </div>
+        <div class="hero__art">
+          <img src="assets/img/may-tinh-minh-hoa.png" alt="Hình minh họa máy tính xách tay và máy tính bảng trên bàn học" width="560" height="449">
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h2 class="h-small" id="muc-luc">Nội dung bài học</h2>
+        <ol class="toc">
+          <li><a href="#phan-1" class="toc__card toc__card--p1"><span class="toc__num">1</span><span>Lịch sử phát triển của hệ điều hành máy tính cá nhân</span></a></li>
+          <li><a href="#phan-2" class="toc__card toc__card--p2"><span class="toc__num">2</span><span>Hệ điều hành cho thiết bị di động</span></a></li>
+          <li><a href="#phan-3" class="toc__card toc__card--p3"><span class="toc__num">3</span><span>Quan hệ giữa hệ điều hành, phần cứng và phần mềm ứng dụng</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= KHỞI ĐỘNG ================= -->
+    <section id="khoi-dong" class="section section--warm">
+      <div class="wrap narrow">
+        <p class="kicker">Khởi động</p>
+        <h2>Em hãy chỉ ra một số công việc mà hệ điều hành thực hiện.</h2>
+        <p>Nghĩ khoảng 30 giây, rồi bấm nút để so sánh với gợi ý.</p>
+        <button class="btn btn--primary" data-reveal="goiYKhoiDong" aria-expanded="false">Xem gợi ý</button>
+        <ul class="reveal checks" id="goiYKhoiDong" hidden>
+          <li>Khởi động và kiểm soát mọi hoạt động của máy tính.</li>
+          <li>Quản lí các tài khoản người dùng máy tính.</li>
+          <li>Quản lí các phần mềm ứng dụng và các tệp dữ liệu.</li>
+          <li>Hỗ trợ sao lưu dữ liệu, phòng chống virus.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= PHẦN 1 ================= -->
+    <section id="phan-1" class="section part part--p1">
+      <div class="wrap">
+        <header class="part__head">
+          <span class="part__badge">Phần 1</span>
+          <h2>Lịch sử phát triển của hệ điều hành máy tính cá nhân</h2>
+        </header>
+
+        <h3>1.1 Hệ điều hành làm những việc gì?</h3>
+        <p class="narrow">Hãy hình dung máy tính là một tòa nhà. Hệ điều hành là <strong>ban quản lí tòa nhà</strong>: giữ chìa khóa các phòng, sắp xếp đồ đạc, cho người vào làm việc và lo dịch vụ chung. Công việc đó chia thành 5 nhóm:</p>
+
+        <div class="fn-grid">
+          <article class="fn"><span class="fn__n">1</span><h4>Quản lí thiết bị</h4><p>Điều khiển chuột, bàn phím, màn hình, máy in…</p><p class="eg">Ví dụ: em cắm chuột mới, máy tự nhận ra.</p></article>
+          <article class="fn"><span class="fn__n">2</span><h4>Quản lí việc lưu trữ dữ liệu</h4><p>Cất tệp vào ổ đĩa, tổ chức theo thư mục.</p><p class="eg">Ví dụ: lưu bài tập vào thư mục "Tin học".</p></article>
+          <article class="fn"><span class="fn__n">3</span><h4>Môi trường để chạy các ứng dụng</h4><p>Ứng dụng nào cũng phải "đứng" trên hệ điều hành mới chạy được.</p><p class="eg">Ví dụ: nháy đúp biểu tượng là mở được Word.</p></article>
+          <article class="fn fn--hl"><span class="fn__n">4</span><h4>Môi trường giao tiếp với người dùng</h4><p>Biểu tượng, cửa sổ, con trỏ chuột giúp em ra lệnh dễ dàng.</p><p class="eg">Ví dụ: kéo tệp vào thùng rác để xóa.</p></article>
+          <article class="fn fn--hl"><span class="fn__n">5</span><h4>Tiện ích nâng cao hiệu quả</h4><p>Các công cụ giúp dùng máy tốt hơn, an toàn hơn.</p><p class="eg">Ví dụ: sao lưu dữ liệu, phòng chống virus.</p></article>
+        </div>
+        <aside class="callout">
+          <strong>Ghi nhớ:</strong> Nhóm <b>4</b> và <b>5</b> thể hiện rõ nhất đặc thù của hệ điều hành máy tính cá nhân, vì máy cá nhân phục vụ trực tiếp một người dùng. Nó phải <b>thân thiện, dễ dùng</b> và có <b>nhiều tiện ích cá nhân</b>.
+        </aside>
+
+        <h3>1.2 Khuynh hướng phát triển</h3>
+        <div class="two">
+          <div class="trend-cards">
+            <article class="card"><h4>Thân thiện</h4><p>Máy ngày càng dễ dùng. <b>Giao diện đồ họa</b> thay cho việc gõ lệnh: em chỉ cần nhìn và bấm.</p></article>
+            <article class="card"><h4>Tăng cường tiện ích</h4><p>Hệ điều hành có thêm nhiều công cụ. Thiết bị di động có rất nhiều tiện ích cá nhân.</p></article>
+            <article class="card card--tip"><h4>"Plug &amp; play" là gì?</h4><p>Nghĩa là <b>"cắm là chạy"</b>. Cắm thiết bị vào, hệ điều hành tự nhận ra mà em không phải cài đặt rắc rối.</p></article>
+          </div>
+          <figure class="fig">
+            <img src="assets/img/plug-and-play.jpg" alt="Biểu tượng Plug and Play với đầu cắm USB" loading="lazy" width="560" height="560">
+            <figcaption>Plug &amp; play xuất hiện lần đầu ở Windows 95.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 3D: Máy tính cá nhân -->
+        <h3>1.3 Khám phá 3D: hệ điều hành quản lí những gì trong máy tính?</h3>
+        <div class="scene" data-scene="pc">
+          <div class="scene__stage" tabindex="0" aria-label="Mô hình 3D máy tính cá nhân. Dùng phím mũi tên để xoay, dấu cộng trừ để phóng to.">
+            <div class="scene__loading">Đang tải mô hình 3D…</div>
+            <div class="scene__fallback" hidden>
+              <img src="assets/img/may-tinh-minh-hoa.png" alt="Hình minh họa máy tính" loading="lazy">
+              <p>Trình duyệt của em chưa hỗ trợ 3D (WebGL). Xem phần giải thích bên cạnh nhé.</p>
+            </div>
+          </div>
+          <div class="scene__panel">
+            <p class="scene__hint">Kéo để xoay · Bấm vào khung rồi cuộn chuột (hoặc chụm 2 ngón) để phóng to · <b>Bấm vào từng bộ phận</b></p>
+            <div class="scene__actions">
+              <button class="btn btn--small" data-action="usb">Cắm USB (plug &amp; play)</button>
+              <button class="btn btn--small btn--ghost" data-action="reset">Đặt lại góc nhìn</button>
+            </div>
+            <div class="scene__info" aria-live="polite">
+              <h4>Chọn một bộ phận</h4>
+              <p>Bấm vào màn hình, bàn phím, chuột, CPU, bộ nhớ hoặc ổ cứng để biết hệ điều hành làm gì với nó.</p>
+            </div>
+            <ul class="scene__list" data-list></ul>
+          </div>
+        </div>
+
+        <h3>1.4 Hệ điều hành Windows qua các thời kì</h3>
+        <ol class="timeline">
+          <li><img src="assets/img/windows-co.png" alt="" loading="lazy"><div><b>Phiên bản 1</b><span class="yr">1985</span><p>Phiên bản đầu tiên được phát hành.</p></div></li>
+          <li><img src="assets/img/windows-co.png" alt="" loading="lazy"><div><b>Phiên bản 3</b><p>Bắt đầu <b>đa nhiệm</b> (chạy nhiều việc cùng lúc), giao diện mới, làm việc được với mạng.</p></div></li>
+          <li><img src="assets/img/windows-co.png" alt="" loading="lazy"><div><b>Windows 95</b><p>Đầu tiên tích hợp trực tiếp các tính năng cơ bản của hệ điều hành; lần đầu dùng plug &amp; play.</p></div></li>
+          <li><img src="assets/img/windows-xp.jpg" alt="" loading="lazy"><div><b>Windows XP</b><p>Một trong các hệ điều hành thành công nhất của Microsoft. Đến nay vẫn được nhiều người tin dùng.</p></div></li>
+          <li><img src="assets/img/windows-7.png" alt="" loading="lazy"><div><b>Windows 7</b><span class="yr">2009</span></div></li>
+          <li><img src="assets/img/windows-8.png" alt="" loading="lazy"><div><b>Windows 8</b><span class="yr">2012</span></div></li>
+          <li><img src="assets/img/windows-10.jpg" alt="" loading="lazy"><div><b>Windows 10</b><span class="yr">2015</span></div></li>
+          <li><img src="assets/img/windows-11.jpg" alt="" loading="lazy"><div><b>Windows 11</b><span class="yr">2021</span><p>Mới nhất của Microsoft tính đến 10/2021.</p></div></li>
+        </ol>
+        <p class="note">Windows hầu như thống trị thị trường hệ điều hành máy tính cá nhân.</p>
+
+        <h3>1.5 Hệ điều hành LINUX</h3>
+        <div class="two">
+          <div>
+            <ul class="checks">
+              <li>Có nguồn gốc từ hệ điều hành <b>UNIX</b>. Hãy hình dung UNIX là "cây mẹ", LINUX là cành mọc ra từ đó.</li>
+              <li>Được cộng đồng người dùng đánh giá cao và sử dụng rộng rãi.</li>
+              <li>Không chỉ chạy trên máy tính cá nhân mà còn dùng cho <b>máy chủ</b> và <b>thiết bị nhúng</b>.</li>
+            </ul>
+          </div>
+          <figure class="fig"><img src="assets/img/linux.png" alt="Biểu tượng chim cánh cụt của LINUX" loading="lazy" width="560" height="277"></figure>
+        </div>
+
+        <!-- Trò chơi 1 -->
+        <div class="game" id="game-sort">
+          <div class="game__head">
+            <span class="game__tag">Trò chơi 1</span>
+            <h3>Xếp việc vào đúng nhóm chức năng</h3>
+            <p>Chọn một thẻ việc, rồi chọn nhóm chức năng phù hợp. Trên máy tính, em có thể kéo thả thẻ.</p>
+          </div>
+          <div class="game__body" data-game="sort"></div>
+        </div>
+
+        <!-- Trò chơi 2 -->
+        <div class="game" id="game-timeline">
+          <div class="game__head">
+            <span class="game__tag">Trò chơi 2</span>
+            <h3>Sắp xếp các phiên bản Windows</h3>
+            <p>Sắp từ <b>cũ nhất</b> (trên) đến <b>mới nhất</b> (dưới) bằng nút ▲ ▼ hoặc kéo thả, rồi bấm "Kiểm tra".</p>
+          </div>
+          <div class="game__body" data-game="timeline"></div>
+        </div>
+
+        <div class="quiz" data-quiz="p1"><h3>Câu hỏi Phần 1</h3></div>
+      </div>
+    </section>
+
+    <!-- ================= PHẦN 2 ================= -->
+    <section id="phan-2" class="section part part--p2">
+      <div class="wrap">
+        <header class="part__head">
+          <span class="part__badge">Phần 2</span>
+          <h2>Hệ điều hành cho thiết bị di động</h2>
+        </header>
+
+        <h3>2.1 Ba đặc trưng quan trọng nhất</h3>
+        <div class="fn-grid fn-grid--3">
+          <article class="fn"><span class="fn__n">1</span><h4>Nhiều tiện ích cá nhân</h4><p>Điện thoại không chỉ để nghe, gọi. Nó còn chụp ảnh, nhắn tin, gửi thư, quản lí danh bạ…</p></article>
+          <article class="fn"><span class="fn__n">2</span><h4>Kết nối mạng không dây</h4><p>Máy đi theo người nên phải vào được Internet ở mọi nơi.</p></article>
+          <article class="fn"><span class="fn__n">3</span><h4>Giao diện tiện lợi nhờ cảm biến</h4><p>Cảm biến giúp máy "hiểu" em đang làm gì, ví dụ xoay ngang thì màn hình xoay theo.</p></article>
+        </div>
+
+        <h3>2.2 Khác gì so với hệ điều hành máy tính cá nhân?</h3>
+        <div class="compare">
+          <div class="compare__col">
+            <h4>Máy tính cá nhân</h4>
+            <ul><li>Thân thiện, dễ dùng.</li><li>Thường có nhiều tiện ích cá nhân.</li></ul>
+          </div>
+          <div class="compare__col compare__col--hl">
+            <h4>Thiết bị di động: còn hơn thế</h4>
+            <ul>
+              <li><b>Dễ dàng kết nối mạng di động.</b></li>
+              <li><b>Giao diện đặc biệt thân thiện</b> nhờ nhận dạng hành vi người dùng qua cảm biến.</li>
+              <li><b>Nhiều tiện ích hỗ trợ cá nhân.</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>2.3 Hai hệ điều hành di động phổ biến</h3>
+        <div class="os-pair">
+          <figure class="os"><img src="assets/img/android.png" alt="Biểu tượng robot xanh của Android" loading="lazy"><figcaption>Android</figcaption></figure>
+          <figure class="os"><img src="assets/img/ios.png" alt="Biểu tượng quả táo của Apple, hãng làm ra iOS" loading="lazy"><figcaption>iOS</figcaption></figure>
+        </div>
+
+        <!-- 3D: Điện thoại -->
+        <h3>2.4 Khám phá 3D: chiếc điện thoại thông minh</h3>
+        <div class="scene" data-scene="phone">
+          <div class="scene__stage" tabindex="0" aria-label="Mô hình 3D điện thoại thông minh. Dùng phím mũi tên để xoay.">
+            <div class="scene__loading">Đang tải mô hình 3D…</div>
+            <div class="scene__fallback" hidden>
+              <img src="assets/img/android.png" alt="" loading="lazy">
+              <p>Trình duyệt của em chưa hỗ trợ 3D (WebGL). Xem phần giải thích bên cạnh nhé.</p>
+            </div>
+          </div>
+          <div class="scene__panel">
+            <p class="scene__hint">Kéo để xoay · <b>Bấm vào màn hình, camera, cảm biến, sóng</b></p>
+            <div class="scene__actions">
+              <button class="btn btn--small" data-action="rotate">Xoay ngang máy (cảm biến)</button>
+              <button class="btn btn--small btn--ghost" data-action="reset">Đặt lại góc nhìn</button>
+            </div>
+            <div class="scene__info" aria-live="polite">
+              <h4>Chọn một bộ phận</h4>
+              <p>Mỗi bộ phận gắn với một đặc trưng của hệ điều hành di động.</p>
+            </div>
+            <ul class="scene__list" data-list></ul>
+          </div>
+        </div>
+
+        <h3>2.5 Vì sao hệ điều hành di động ưu tiên giao tiếp thân thiện và kết nối mạng?</h3>
+        <div class="two">
+          <article class="card"><h4>Thân thiện</h4><p>Thiết bị di động phổ biến vì có nhiều tiện ích. Muốn <b>ai cũng dùng được</b> thì tính thân thiện, dễ dùng phải đứng hàng đầu.</p></article>
+          <article class="card"><h4>Kết nối mạng</h4><p>Máy di chuyển theo người, nên phải kết nối Internet ở bất cứ đâu qua <b>3G, 4G, 5G</b>, hoặc <b>wifi, bluetooth</b> trong phạm vi hẹp.</p></article>
+        </div>
+
+        <h3>2.6 Ba tiện ích thường có trên điện thoại</h3>
+        <div class="apps">
+          <figure><img src="assets/img/danh-ba.png" alt="" loading="lazy"><figcaption><b>Gọi, nhắn tin</b> kết hợp quản lí danh bạ</figcaption></figure>
+          <figure><img src="assets/img/may-anh-app.png" alt="" loading="lazy"><figcaption><b>Chụp ảnh,</b> quay phim</figcaption></figure>
+          <figure><img src="assets/img/thu-dien-tu.png" alt="" loading="lazy"><figcaption><b>Gửi thư</b> điện tử</figcaption></figure>
+        </div>
+
+        <!-- Trò chơi 3 -->
+        <div class="game" id="game-match">
+          <div class="game__head">
+            <span class="game__tag">Trò chơi 3</span>
+            <h3>Ghép hệ điều hành với thiết bị</h3>
+            <p>Chọn một ô bên trái, rồi chọn ô phù hợp bên phải. Ghép nhanh và ít sai nhất có thể!</p>
+          </div>
+          <div class="game__body" data-game="match"></div>
+        </div>
+
+        <div class="quiz" data-quiz="p2"><h3>Câu hỏi Phần 2</h3></div>
+      </div>
+    </section>
+
+    <!-- ================= PHẦN 3 ================= -->
+    <section id="phan-3" class="section part part--p3">
+      <div class="wrap">
+        <header class="part__head">
+          <span class="part__badge">Phần 3</span>
+          <h2>Quan hệ giữa hệ điều hành, phần cứng và phần mềm ứng dụng</h2>
+        </header>
+
+        <h3>3.1 Có thiết bị nào chạy mà không cần hệ điều hành?</h3>
+        <div class="two">
+          <div>
+            <p><b>Có.</b> Nhiều thiết bị được điều khiển bởi bộ vi xử lí, chương trình được <b>ghi sẵn trong bộ nhớ ROM</b>. Bật lên là chạy, không cần hệ điều hành.</p>
+            <p>Ví dụ: <b>hệ thống điều khiển lò vi sóng</b>. Nó chỉ làm vài việc cố định: hâm, rã đông, hẹn giờ.</p>
+            <aside class="callout"><strong>Khi nào cần hệ điều hành?</strong> Khi thiết bị xử lí thông tin <b>đa năng</b>, phải chạy được nhiều ứng dụng khác nhau, như máy tính hay điện thoại.</aside>
+          </div>
+          <figure class="fig"><img src="assets/img/lo-vi-song.jpg" alt="Lò vi sóng có bảng điều khiển núm xoay" loading="lazy" width="560" height="329"><figcaption>Lò vi sóng: chương trình nằm sẵn trong ROM.</figcaption></figure>
+        </div>
+
+        <!-- 3D: Sơ đồ lớp -->
+        <h3>3.2 Khám phá 3D: bốn tầng của một hệ thống máy tính</h3>
+        <div class="scene" data-scene="layers">
+          <div class="scene__stage" tabindex="0" aria-label="Mô hình 3D bốn tầng: người dùng, phần mềm ứng dụng, hệ điều hành, phần cứng.">
+            <div class="scene__loading">Đang tải mô hình 3D…</div>
+            <div class="scene__fallback" hidden>
+              <ol class="layers-fallback">
+                <li>Người dùng</li><li>Phần mềm ứng dụng</li><li>Hệ điều hành</li><li>Phần cứng (CPU, bộ nhớ, thiết bị vào/ra)</li>
+              </ol>
+              <p>Trình duyệt của em chưa hỗ trợ 3D (WebGL), đây là sơ đồ thay thế.</p>
+            </div>
+          </div>
+          <div class="scene__panel">
+            <p class="scene__hint">Kéo để xoay · <b>Bấm vào từng tầng</b></p>
+            <div class="scene__actions">
+              <button class="btn btn--small" data-action="flow">Xem lệnh "In bài" đi qua các tầng</button>
+              <button class="btn btn--small btn--ghost" data-action="explode">Tách / gộp tầng</button>
+              <button class="btn btn--small btn--ghost" data-action="reset">Đặt lại góc nhìn</button>
+            </div>
+            <div class="scene__info" aria-live="polite">
+              <h4>Chọn một tầng</h4>
+              <p>Hoặc bấm "Xem lệnh In bài" để thấy hệ điều hành làm trung gian thế nào.</p>
+            </div>
+            <ul class="scene__list" data-list></ul>
+          </div>
+        </div>
+
+        <h3>3.3 Vai trò của hệ điều hành</h3>
+        <div class="roles">
+          <article class="card"><span class="role__n">1</span><h4>Trung gian</h4><p>Phần mềm ứng dụng khai thác phần cứng <b>thông qua</b> hệ điều hành, không điều khiển trực tiếp linh kiện.</p></article>
+          <article class="card"><span class="role__n">2</span><h4>Tạo ra "máy ảo"</h4><p>Hệ điều hành cùng phần cứng tạo ra một máy ảo có giao diện thuận lợi cho người dùng.</p></article>
+          <article class="card"><span class="role__n">3</span><h4>Môi trường chung</h4><p>Là môi trường để phần mềm ứng dụng khai thác hiệu quả phần cứng.</p></article>
+        </div>
+
+        <div class="analogy">
+          <h4>So sánh cho dễ nhớ: một nhà hàng</h4>
+          <div class="analogy__row">
+            <div><b>Thực khách</b><span>= Người dùng</span></div>
+            <div><b>Thực đơn &amp; món ăn</b><span>= Phần mềm ứng dụng</span></div>
+            <div><b>Bếp trưởng điều phối</b><span>= Hệ điều hành</span></div>
+            <div><b>Bếp, nồi, nguyên liệu</b><span>= Phần cứng</span></div>
+          </div>
+          <p>Khách không vào bếp tự nấu. Khách gọi món, bếp trưởng phân việc và dùng bếp núc để làm ra món ăn.</p>
+        </div>
+
+        <h3>3.4 Trả lời câu hỏi SGK</h3>
+        <details class="qa">
+          <summary>Câu 1: Nêu lí do thiết bị xử lí đa năng cần có hệ điều hành.</summary>
+          <p>Để chạy được nhiều ứng dụng khác nhau, cần có phương tiện quản lí lưu trữ phần mềm và dữ liệu (nhất là khi chạy nhiều ứng dụng), cần phối hợp thiết bị hiệu quả và cần giao diện làm việc cho người dùng. <b>→ Cần một phần mềm làm môi trường chung để chạy các ứng dụng: đó là hệ điều hành.</b></p>
+        </details>
+        <details class="qa">
+          <summary>Câu 2: Nêu mối quan hệ giữa phần cứng, phần mềm ứng dụng và hệ điều hành.</summary>
+          <p>Hệ điều hành cung cấp các dịch vụ sử dụng phần cứng. Các chương trình ứng dụng khai thác phần cứng qua các dịch vụ của hệ điều hành.</p>
+        </details>
+
+        <!-- Trò chơi 4 -->
+        <div class="game" id="game-needos">
+          <div class="game__head">
+            <span class="game__tag">Trò chơi 4</span>
+            <h3>Thiết bị này có cần hệ điều hành không?</h3>
+            <p>Xem từng thiết bị và chọn câu trả lời. Giữ chuỗi đúng càng dài càng tốt!</p>
+          </div>
+          <div class="game__body" data-game="needos"></div>
+        </div>
+
+        <div class="quiz" data-quiz="p3"><h3>Câu hỏi Phần 3</h3></div>
+      </div>
+    </section>
+
+    <!-- ================= TỔNG KẾT ================= -->
+    <section id="tong-ket" class="section section--summary">
+      <div class="wrap">
+        <header class="part__head">
+          <span class="part__badge">Tổng kết</span>
+          <h2>Ghi nhớ nhanh</h2>
+        </header>
+        <div class="summary">
+          <article class="card card--p1"><h4>Máy tính cá nhân</h4><p>5 nhóm chức năng. Phát triển theo hướng <b>thân thiện</b> và <b>tăng cường tiện ích</b>. Windows thống trị; LINUX có gốc từ UNIX.</p></article>
+          <article class="card card--p2"><h4>Thiết bị di động</h4><p>Nhiều tiện ích cá nhân, kết nối mạng không dây, giao diện tiện lợi nhờ cảm biến. Phổ biến: <b>Android</b>, <b>iOS</b>.</p></article>
+          <article class="card card--p3"><h4>Quan hệ</h4><p>Người dùng → Ứng dụng → <b>Hệ điều hành</b> → Phần cứng. Hệ điều hành là <b>trung gian</b> và môi trường chung.</p></article>
+        </div>
+
+        <h3>Luyện tập</h3>
+        <details class="qa">
+          <summary>Bài 1: Em hiểu thế nào về tính thân thiện của hệ điều hành?</summary>
+          <p>Tính thân thiện thể hiện ở sự phù hợp với các quan niệm thông thường (ví dụ: đối tượng thể hiện bằng biểu tượng, xóa tệp bằng cách kéo vào biểu tượng thùng rác), dễ thao tác, dễ học.</p>
+        </details>
+        <details class="qa">
+          <summary>Bài 2: Hệ điều hành cung cấp môi trường giao tiếp với người dùng như thế nào? Trên Windows thể hiện ra sao?</summary>
+          <p>Một vài phương tiện chính trên Windows:</p>
+          <ul><li>Biểu tượng, cửa sổ, con trỏ điều khiển bằng chuột để chỉ định đối tượng làm việc.</li><li>Tổ chức lưu trữ dữ liệu, phần mềm trong các thư mục.</li><li>Khởi động ứng dụng bằng cách nháy đúp chuột vào biểu tượng.</li></ul>
+        </details>
+
+        <h3>Vận dụng</h3>
+        <details class="qa">
+          <summary>Bài 1: Ngoài máy tính, thiết bị gia dụng nào còn sử dụng hệ điều hành?</summary>
+          <div class="apps apps--sm">
+            <figure><img src="assets/img/tivi-thong-minh.jpg" alt="" loading="lazy"><figcaption>Tivi thông minh</figcaption></figure>
+            <figure><img src="assets/img/may-anh-ki-thuat-so.jpg" alt="" loading="lazy"><figcaption>Máy ảnh kĩ thuật số</figcaption></figure>
+            <figure><img src="assets/img/dong-ho-thong-minh.jpg" alt="" loading="lazy"><figcaption>Đồng hồ thông minh</figcaption></figure>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Bài 2: LINUX có nguồn gốc từ UNIX. Hãy tìm hiểu lịch sử LINUX để biết thêm về UNIX.</summary>
+          <p>Về nhà tìm hiểu tại: <a href="https://vi.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">vi.wikipedia.org/wiki/Unix</a></p>
+        </details>
+
+        <!-- Bài kiểm tra -->
+        <div class="test" id="bai-kiem-tra">
+          <div class="game__head">
+            <span class="game__tag game__tag--dark">Bài kiểm tra cuối bài</span>
+            <h3>10 câu trắc nghiệm</h3>
+            <p>Chọn đáp án cho tất cả câu hỏi rồi bấm "Nộp bài". Em sẽ biết điểm và xem lại lời giải.</p>
+          </div>
+          <div data-test></div>
+        </div>
+
+        <div class="homework">
+          <h3>Hướng dẫn về nhà</h3>
+          <ul class="checks">
+            <li>Ôn tập kiến thức đã học.</li>
+            <li>Hoàn thành bài tập vận dụng và bài tập trong sách bài tập.</li>
+            <li>Chuẩn bị bài sau: <b>Bài 2: Thực hành sử dụng hệ điều hành</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Bài học tương tác dựa trên giáo án <b>Bài 1 · Hệ điều hành</b> (Tin học 11). Cảm ơn các em đã chú ý!</p>
+      <button class="btn btn--small btn--ghost" id="resetProgress">Xóa tiến độ và làm lại từ đầu</button>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js" defer></script>
+  <script src="js/scenes3d.js" defer></script>
+</body>
+</html>
